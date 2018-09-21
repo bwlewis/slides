@@ -113,7 +113,8 @@ python -m SimpleHTTPServer
 <br/>
 <ul>
 <li>Use the left/right arrows or the little buttons to navigate.
-<li>Use the print button to print the slides, one slide per page.
+<li>Use the 'p' key or print button to print the slides nicely.
+<li>Use the 'h' key to hide the buttons.
 </ul>
 </div>
 
@@ -128,12 +129,14 @@ the less than and greater than signs in a special way.
 <br/><br/>
 I'd like to ad a &lt;pre&gt;-like environment that
 can take code verbatim. What do you think?
+<br/><br/>
+Add numbering? (should be easy)
 </div>
 
 
 <!--END OF SLIDES-->
 
-<div style="position:fixed; bottom: 20px;">
+<div class="buttons" style="position:fixed; bottom: 20px;">
   <button onclick="plusDivs(-1)">&#10094;</button>
   <button onclick="plusDivs(1)">&#10095;</button>
   <button onclick="printSlides()">print</button>
@@ -151,8 +154,20 @@ function ki(e) {
   if(keyCode==37) {
     plusDivs(-1);
   }
+  if(keyCode==80) {
+    printSlides();
+  }
+  if(keyCode==72) {
+    hideButtons();
+  }
 }
 showDivs(slideIndex);
+
+function hideButtons() {
+  var x = document.getElementsByClassName("buttons");
+  if(x[0].style.display == "none") x[0].style.display = "block"
+  else x[0].style.display = "none";
+}
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
