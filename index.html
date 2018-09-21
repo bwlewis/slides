@@ -1,0 +1,187 @@
+<html>
+<title>Simple Slide Template -- B. W. Lewis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slide {
+  font-family: arial;
+  font-size: 40pt;
+  font-weight: 1800;
+  width: "100%";
+}
+pre {
+  font-family: monospace;
+  font-size: 28pt;
+  background-color: lightgray;
+}
+
+@media print {
+.slide { 
+    page-break-before: always;
+  }
+}
+</style>
+<body style="margin: 80px;">
+
+<!-- BEGIN SLIDES -->
+
+
+
+<div class="slide">
+<center>
+<pre style="background-color: transparent;">
+
+  _    _ _______ __  __ _            _ _     _           
+ | |  | |__   __|  \/  | |          | (_)   | |          
+ | |__| |  | |  | \  / | |       ___| |_  __| | ___  ___ 
+ |  __  |  | |  | |\/| | |      / __| | |/ _` |/ _ \/ __|
+ | |  | |  | |  | |  | | |____  \__ \ | | (_| |  __/\__ \
+ |_|  |_|  |_|  |_|  |_|______| |___/_|_|\__,_|\___||___/
+                                                         
+                                                         
+</pre>
+<br/><br/>
+  Bryan W. Lewis, September 2018
+</center>
+</div>
+
+
+
+<div class="slide">
+<br/>
+Why?
+<br/><br/>
+<blockquote style="font-style: italic;">
+  I always forget mark down syntax idiosyncracies, and often find myself using HTML anyway.
+  <br/><br/>
+  I'm also sick of bloated slides and usually just want an easy, web-friendly slide environment.
+</blockquote>
+</div>
+
+
+<div class="slide">
+<br/>
+HTML and CSS are pretty easy to use and give you
+<br/><br/>
+<ul>
+<li> Easy lists like this
+<li> Fine control of page layout
+<li> Fine control of look and feel
+<li> Minimal bloat
+<li> A wholesome retro vibe
+</ul>
+</div>
+
+
+
+<div class="slide">
+<br/>
+Using this template:
+<br/><br/>
+Wrap each slide in a "slide" div element like so:
+<pre>
+&lt;div class="slide"&gt;
+
+Your slide here....
+
+&lt;/div&gt;
+</pre>
+</div>
+
+<div class="slide">
+<br/>
+...and place your slides in-between the 
+<pre>
+&lt;!--BEGIN SLIDES--&gt;
+</pre>
+and
+<pre>
+&lt;!--END OF SLIDES--&gt;
+</pre>
+markers in this document.
+</div>
+
+
+<div class="slide">
+<br/>
+You can put your slides on a web site or display them in a local web browser
+using the Python simple HTTP server:
+<br/>
+<pre>
+cd (to your slide directory)
+python -m SimpleHTTPServer
+</pre>
+<br/>
+<ul>
+<li>Use the left/right arrows or the little buttons to navigate.
+<li>Use the print button to print the slides, one slide per page.
+</ul>
+</div>
+
+
+<div class="slide">
+<br/>
+Problems and improvements?
+<br/><br/>
+The biggest issue that I have is that code displayed in HTML
+&lt;pre&gt; or &lt;code&gt; environments requires encoding
+the less than and greater than signs in a special way.
+<br/><br/>
+I'd like to ad a &lt;pre&gt;-like environment that
+can take code verbatim. What do you think?
+</div>
+
+
+<!--END OF SLIDES-->
+
+<div style="position:fixed; bottom: 20px;">
+  <button onclick="plusDivs(-1)">&#10094;</button>
+  <button onclick="plusDivs(1)">&#10095;</button>
+  <button onclick="printSlides()">print</button>
+</div>
+
+<script>
+var slideIndex = 1;
+document.addEventListener("keydown", ki, false);
+
+function ki(e) {
+  var keyCode = e.keyCode;
+  if(keyCode==39) {
+    plusDivs(1);
+  }
+  if(keyCode==37) {
+    plusDivs(-1);
+  }
+}
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex - 1].style.display = "block";  
+}
+
+function printSlides() {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "block";  
+  }
+  window.print();
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex - 1].style.display = "block";  
+}
+</script>
