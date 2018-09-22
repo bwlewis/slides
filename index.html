@@ -67,7 +67,7 @@ HTML and CSS are pretty easy to use and give you
 <li> Fine control of page layout
 <li> Fine control of look and feel
 <li> Minimal bloat
-<li> A wholesome retro vibe
+<li> A geeky retro vibe
 </ul>
 </div>
 
@@ -88,7 +88,7 @@ Your slide here....
 </div>
 
 <div class="slide">
-<br/>
+<br/><br/><br/>
 ...and place your slides in-between the 
 <pre>
 &lt;!--BEGIN SLIDES--&gt;
@@ -129,8 +129,6 @@ the less than and greater than signs in a special way.
 <br/><br/>
 I'd like to ad a &lt;pre&gt;-like environment that
 can take code verbatim. What do you think?
-<br/><br/>
-Add numbering? (should be easy)
 </div>
 
 
@@ -141,6 +139,7 @@ Add numbering? (should be easy)
   <button onclick="plusDivs(1)">&#10095;</button>
   <button onclick="printSlides()">print</button>
 </div>
+<div id="pagenumber" style="position:fixed; bottom: 20px; right: 20px;">1</div>
 
 <script>
 var slideIndex = 1;
@@ -182,10 +181,14 @@ function showDivs(n) {
      x[i].style.display = "none";  
   }
   x[slideIndex - 1].style.display = "block";  
+  var y = document.getElementById("pagenumber");
+  y.innerHTML = slideIndex + "/" + x.length;
 }
 
 function printSlides() {
   var i;
+  var y = document.getElementById("pagenumber");
+  y.innerHTML = "";
   var x = document.getElementsByClassName("slide");
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";  
