@@ -1,34 +1,13 @@
 <html>
 <title>Simple Slide Template -- B. W. Lewis</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.slide {
-  font-family: arial;
-  font-size: 40pt;
-  font-weight: 1800;
-  width: "100%";
-}
-pre {
-  font-family: monospace;
-  font-size: 28pt;
-  background-color: lightgray;
-}
-
-@media print {
-.slide { 
-    page-break-before: always;
-  }
-}
-</style>
 <body style="margin: 80px;">
 
 <!-- BEGIN SLIDES -->
 
 
-
 <div class="slide">
 <center>
-<pre style="background-color: transparent;">
+<pre style="font-size: 26pt; background-color: transparent;">
 
   _    _ _______ __  __ _            _ _     _           
  | |  | |__   __|  \/  | |          | (_)   | |          
@@ -51,9 +30,9 @@ pre {
 Why?
 <br/><br/>
 <blockquote style="font-style: italic;">
-  I always forget mark down syntax idiosyncracies, and often find myself using HTML anyway.
+  I forget mark down syntax details, and often find myself using HTML anyway.
   <br/><br/>
-  I'm sick of bloated slides and usually just want an easy, web-friendly slide environment.
+  I'm sick of bloated slides and often just want an easy, web-friendly slide environment.
 </blockquote>
 </div>
 
@@ -64,9 +43,8 @@ HTML and CSS are pretty easy to use and give you
 <br/><br/>
 <ul>
 <li> Easy lists like this
-<li> Fine control of page layout
-<li> Fine control of look and feel
-<li> Minimal bloat
+<li> Fine control of page layout, look and feel
+<li> Minimal bloat (these slides are about 4k)
 <li> A geeky retro vibe
 </ul>
 </div>
@@ -78,25 +56,20 @@ HTML and CSS are pretty easy to use and give you
 Using this template:
 <br/><br/>
 Wrap each slide in a "slide" div element like so:
-<pre>
-&lt;div class="slide"&gt;
+<xmp><div class="slide">
 
 Your slide here....
 
-&lt;/div&gt;
-</pre>
+</div>
+</xmp>
 </div>
 
 <div class="slide">
 <br/><br/><br/>
 ...and place your slides in-between the 
-<pre>
-&lt;!--BEGIN SLIDES--&gt;
-</pre>
+<xmp><!--BEGIN SLIDES--></xmp>
 and
-<pre>
-&lt;!--END OF SLIDES--&gt;
-</pre>
+<xmp><!--END OF SLIDES--></xmp>
 markers in this document.
 </div>
 
@@ -106,33 +79,42 @@ markers in this document.
 You can put your slides on a web site or display them in a local web browser
 using the Python simple HTTP server:
 <br/>
-<pre>
-cd (to your slide directory)
+<xmp>cd (to your slide directory)
 python -m SimpleHTTPServer
-</pre>
-<br/>
+</xmp>
 <ul>
 <li>Use the left/right arrows or the little buttons to navigate.
 <li>Use the 'p' key or print button to print the slides nicely.
 <li>Use the 'h' key to hide the buttons.
 </ul>
-</div>
-
-
-<div class="slide">
 <br/>
-Problems and improvements?
-<br/><br/>
-The biggest issue that I have is that code displayed in HTML
-&lt;pre&gt; or &lt;code&gt; environments requires encoding
-the less than and greater than signs in a special way.
-<br/><br/>
-I'd like to ad a &lt;pre&gt;-like environment that
-can take code verbatim. What do you think?
+That's it!
 </div>
+
 
 
 <!--END OF SLIDES-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.slide {
+  font-family: arial;
+  font-size: 40pt;
+  font-weight: 1800;
+  width: "100%";
+}
+xmp {
+  font-family: monospace;
+  font-size: 28pt;
+  background-color: lightgray;
+}
+
+@media print {
+.slide { 
+    page-break-before: always;
+  }
+}
+</style>
 
 <div class="buttons" style="position:fixed; bottom: 20px;">
   <button onclick="plusDivs(-1)">&#10094;</button>
