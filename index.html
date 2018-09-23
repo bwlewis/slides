@@ -19,7 +19,7 @@
                                                          
 </pre>
 <br/><br/>
-  Bryan W. Lewis, September 2018
+A template for simple HTML slides
 </center>
 </div>
 
@@ -27,23 +27,25 @@
 
 <div class="slide">
 <br/>
-Why?
+<b>Why?</b>
 <br/><br/>
 <blockquote style="font-style: italic;">
-  I forget mark down syntax details, and often find myself using HTML anyway.
+  I tend forget mark down syntax details, and often find myself using HTML anyway.
   <br/><br/>
-  I'm sick of bloated slides and often just want an easy, web-friendly slide environment.
+  I'm sick of bloat and often just want a fast and easy slide environment.
 </blockquote>
+<br/>
+That is, I wrote this for myself but you're welcome to use it if you like it.
 </div>
 
 
 <div class="slide">
 <br/>
-HTML and CSS are pretty easy to use and give you
+<b>HTML and CSS are pretty easy to use and give you</b>
 <br/><br/>
 <ul>
-<li> Easy lists like this
-<li> Fine control of page layout, look and feel
+<li> Lists like this
+<li> Very fine control of page layout, look and feel
 <li> Minimal bloat (these slides are about 6k)
 <li> A geeky retro vibe
 </ul>
@@ -53,7 +55,7 @@ HTML and CSS are pretty easy to use and give you
 
 <div class="slide">
 <br/>
-Using this template:
+<b>Using this template:</b>
 <br/><br/>
 Wrap each slide in a "slide" div element like so:
 <xmp><div class="slide">
@@ -82,16 +84,19 @@ using the Python simple HTTP server:
 <xmp>cd (to your slide directory)
 python -m SimpleHTTPServer
 </xmp>
+Then point your browser to http://localhost:8000
 <ul>
 <li>Use the left/right arrows or the little buttons to navigate.
-<li>Use the 'p' key or print button to print the slides nicely.
-<li>Use the 'h' key to hide the buttons.
+<li style="margin-top: 20px;">Use the 'p' key or print button to print the slides nicely,<br/>
+and the 'h' key to hide the buttons.
 </ul>
 </div>
 
 
+
+
 <div class="slide">
-<br/><b>TIPS</b><br/><br/>
+<br/><b>Tips</b><br/><br/>
 <ul>
 <li> Use &lt;xmp&gt;<sup>*</sup> instead of &lt;pre&gt; to include verbatim content/code without needing to encode special characters.
 <li> Include images the usual way as references to files like this:
@@ -102,7 +107,7 @@ to embed images in a single HTML document:
 <br/>
 <font style="font-size: 24pt;">
 <sup>*</sup>Deprecated/obsolete but somehow still generally supported.<br/>
-See the source code index.html file for details about these examples.
+Read the source code index.html file for details about these examples.
 </font>
 </div>
 
@@ -121,7 +126,7 @@ See the source code index.html file for details about these examples.
 xmp {
   font-family: monospace;
   font-size: 28pt;
-  background-color: lightgray;
+  background-color: LightBlue;
 }
 
 @media print {
