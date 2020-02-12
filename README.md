@@ -1,5 +1,8 @@
 See index.html for a simple HTTP/CSS/JS slide template.
 
+The example `img.sh` shell script helps produce a single, self-contained HTML
+file by embedding images as data URI elements (with some restrictions).
+
 The slides may  be viewed at https://bwlewis.github.io/slides/
 
 Enjoy!
